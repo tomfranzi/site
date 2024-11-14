@@ -1,0 +1,131 @@
+/* Style général */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  overflow: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  top: -20%; /* Positionne le texte plus haut */
+  transform: translateY(-20%);
+}
+
+/* Animation de fondu pour le texte */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation CSS - Réseau de points et lignes */
+.network-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 128, 0.1), transparent);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.network-animation::before,
+.network-animation::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 128, 0.15), transparent);
+  border-radius: 50%;
+  animation: scale 8s infinite alternate ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Arrière-plan animé CSS - Code Binaire */
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.binary {
+  font-family: monospace;
+  color: rgba(0, 255, 128, 0.6);
+  font-size: 20px;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+/* Ajout de plusieurs lignes de code en arrière-plan */
+.binary:nth-child(1) { top: 10%; animation-duration: 15s; }
+.binary:nth-child(2) { top: 25%; animation-duration: 20s; }
+.binary:nth-child(3) { top: 40%; animation-duration: 18s; }
+.binary:nth-child(4) { top: 55%; animation-duration: 22s; }
+.binary:nth-child(5) { top: 70%; animation-duration: 19s; }
+.binary:nth-child(6) { top: 85%; animation-duration: 17s; }
+
+/* Centrage et espacement pour les liens sociaux */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Plus d’espace entre les icônes */
+  margin-top: 30px;
+  top: 20px;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
